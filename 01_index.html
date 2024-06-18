@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Guide to HTML and CSS</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #fff;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: auto;
+      }
+      a {
+        color: #1a0dab;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      ul li {
+        margin-bottom: 5px;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.281);
+        backdrop-filter: blur(100px);
+        padding: 10px 0;
+        z-index: 1000;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: #eee;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      nav ul li a:hover {
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="/01_index.html">Resources</a></li>
+          <li><a href="/02_index.html">Notes</a></li>
+        </ul>
+      </nav>
+      <h1>A Comprehensive Guide to HTML and CSS</h1>
+
+      <h2>Introduction</h2>
+      <p>
+        In the world of web development, HTML and CSS are the foundational
+        technologies used to create and style web pages. HTML (HyperText Markup
+        Language) provides the structure of the page, while CSS (Cascading Style
+        Sheets) is used for styling and layout. This guide will take you through
+        the essentials of HTML and CSS, from the basics to advanced concepts.
+      </p>
+
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#introduction-to-html">Introduction to HTML</a></li>
+        <li>
+          <a href="#basic-structure-of-an-html-document"
+            >Basic Structure of an HTML Document</a
+          >
+        </li>
+        <li>
+          <a href="#html-elements-and-attributes"
+            >HTML Elements and Attributes</a
+          >
+        </li>
+        <li><a href="#styling-with-css">Styling with CSS</a></li>
+        <li>
+          <a href="#selectors-and-combinators">Selectors and Combinators</a>
+        </li>
+        <li><a href="#box-model">Box Model</a></li>
+        <li><a href="#layout-techniques">Layout Techniques</a></li>
+        <li><a href="#responsive-design">Responsive Design</a></li>
+        <li><a href="#advanced-css">Advanced CSS</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+
+      <h2 id="introduction-to-html">Introduction to HTML</h2>
+      <p>
+        HTML stands for HyperText Markup Language. It is the standard language
+        for creating web pages and web applications. HTML describes the
+        structure of a web page semantically and originally included cues for
+        the appearance of the document.
+      </p>
+
+      <h2 id="basic-structure-of-an-html-document">
+        Basic Structure of an HTML Document
+      </h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <p>
+        This is the basic structure of an HTML document. It includes the
+        document type declaration, the HTML element, the head, and the body.
+      </p>
+
+      <h2 id="html-elements-and-attributes">HTML Elements and Attributes</h2>
+      <p>
+        HTML elements are the building blocks of HTML pages. An element
+        typically consists of a start tag, content, and an end tag. Attributes
+        provide additional information about an element and are included in the
+        start tag.
+      </p>
+      <pre><code>&lt;tagname attribute="value"&gt;Content&lt;/tagname&gt;</code></pre>
+
+      <h2 id="styling-with-css">Styling with CSS</h2>
+      <p>
+        CSS (Cascading Style Sheets) is used to style and layout web pages. It
+        allows you to apply styles to HTML elements by selecting them using
+        various selectors.
+      </p>
+      <pre><code>body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}</code></pre>
+
+      <h2 id="selectors-and-combinators">Selectors and Combinators</h2>
+      <p>
+        CSS selectors are used to "select" HTML elements to apply styles to
+        them. Common selectors include element selectors, class selectors, and
+        ID selectors. Combinators describe the relationship between the
+        selectors.
+      </p>
+      <pre><code>/* Element selector */
+p {
+    color: blue;
+}
+
+/* Class selector */
+.intro {
+    font-size: 1.2em;
+}
+
+/* ID selector */
+#main-header {
+    text-align: center;
+}
+
+/* Descendant combinator */
+div p {
+    margin-bottom: 20px;
+}
+
+/* Child combinator */
+div &gt; p {
+    margin-bottom: 20px;
+}
+
+/* Adjacent sibling combinator */
+h1 + p {
+    margin-top: 10px;
+}
+
+/* General sibling combinator */
+h1 ~ p {
+    margin-top: 10px;
+}</code></pre>
+
+      <h2 id="box-model">Box Model</h2>
+      <p>
+        The CSS box model describes the rectangular boxes generated for elements
+        in the document tree. It includes margins, borders, padding, and the
+        actual content area.
+      </p>
+      <pre><code>div {
+    width: 300px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 20px;
+}</code></pre>
+
+      <h2 id="layout-techniques">Layout Techniques</h2>
+      <p>
+        CSS offers various layout techniques to arrange elements on the web
+        page, including Flexbox, Grid, and positioning.
+      </p>
+      <h3>Flexbox</h3>
+      <pre><code>.container {
+    display: flex;
+    justify-content: space-between;
+}</code></pre>
+
+      <h3>Grid</h3>
+      <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}</code></pre>
+
+      <h2 id="responsive-design">Responsive Design</h2>
+      <p>
+        Responsive design ensures that web pages look good on all devices, from
+        desktops to mobile phones. Techniques include using flexible grids,
+        media queries, and responsive images.
+      </p>
+      <pre><code>@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+}</code></pre>
+
+      <h2 id="advanced-css">Advanced CSS</h2>
+      <p>
+        Advanced CSS includes concepts like animations, transitions, and custom
+        properties (CSS variables).
+      </p>
+      <h3>Animations</h3>
+      <pre><code>@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+div {
+    animation-name: example;
+    animation-duration: 4s;
+}</code></pre>
+
+      <h3>Transitions</h3>
+      <pre><code>div {
+    transition: width 2s;
+}
+
+div:hover {
+    width: 300px;
+}</code></pre>
+
+      <h3>Custom Properties</h3>
+      <pre><code>:root {
+    --main-bg-color: coral;
+}
+
+div {
+    background-color: var(--main-bg-color);
+}</code></pre>
+
+      <h2 id="resources">Resources</h2>
+      <ul>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+            >MDN Web Docs - HTML</a
+          >
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+            >MDN Web Docs - CSS</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/html/"
+            >W3Schools - HTML Tutorial</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/css/">W3Schools - CSS Tutorial</a>
+        </li>
+        <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
